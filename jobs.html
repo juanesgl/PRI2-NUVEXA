@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nuvexa · Vacantes disponibles</title>
+  <meta name="theme-color" content="#003b63">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body data-page="jobs">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="topbar" id="topbar"></header>
+
+  <main class="page" id="main">
+    <div class="jobs-head">
+      <div>
+        <h1 class="page-title">Vacantes disponibles</h1>
+        <p class="page-subtitle" id="greeting">Postúlate en un clic. Te damos respuesta en 24 horas.</p>
+      </div>
+      <form class="search" id="search-form" role="search">
+        <div class="input-wrap">
+          <svg class="icon input-wrap__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input class="input" type="search" id="q" placeholder="Busca por cargo, empresa o municipio" aria-label="Buscar vacantes" autocomplete="off">
+        </div>
+        <button class="btn btn--dark" type="submit">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <span class="btn__label">Buscar</span>
+        </button>
+      </form>
+    </div>
+
+    <div class="jobs-layout">
+      <details class="filters" id="filters" open>
+        <summary>Filtros <span class="badge badge--info badge--plain" id="filters-active" hidden></span></summary>
+        <div class="filters__body">
+          <fieldset class="filter-group" id="f-category"><legend>Área</legend></fieldset>
+          <fieldset class="filter-group" id="f-shift"><legend>Turno</legend></fieldset>
+          <fieldset class="filter-group" id="f-contract"><legend>Tipo de contrato</legend></fieldset>
+          <div><button class="btn btn--secondary btn--sm" type="button" data-clear-filters>Limpiar filtros</button></div>
+        </div>
+      </details>
+
+      <section aria-labelledby="results-title">
+        <h2 class="sr-only" id="results-title">Resultados</h2>
+        <div class="results-head">
+          <p class="results-count" id="results-count" aria-live="polite"></p>
+          <div class="select has-value" data-select>
+            <button class="input select__trigger" type="button" id="sort" aria-haspopup="listbox" aria-expanded="false" aria-label="Ordenar vacantes">
+              <span class="select__value">Más recientes</span>
+              <svg class="icon select__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <ul class="select__list" role="listbox" tabindex="-1" aria-label="Ordenar por">
+              <li role="option" data-value="recent" aria-selected="true">Más recientes</li>
+              <li role="option" data-value="salary">Mayor salario</li>
+              <li role="option" data-value="openings">Más cupos</li>
+            </ul>
+            <input type="hidden" name="sort" value="recent">
+          </div>
+        </div>
+        <ul class="job-list" id="job-list"></ul>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/jobs.js"></script>
+</body>
+</html>

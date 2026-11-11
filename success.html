@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nuvexa · Registro completo</title>
+  <meta name="theme-color" content="#003b63">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/onboarding.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="index.html" aria-label="Nuvexa, inicio">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__name">NUVEXA</span>
+      </a>
+      <ol class="progress-steps" aria-label="Progreso del registro">
+        <li class="progress-steps__item is-done"><span class="progress-steps__num" aria-hidden="true">✓</span><span class="progress-steps__label">Cuenta</span></li>
+        <li class="progress-steps__sep" aria-hidden="true"></li>
+        <li class="progress-steps__item is-done"><span class="progress-steps__num" aria-hidden="true">✓</span><span class="progress-steps__label">Perfil</span></li>
+        <li class="progress-steps__sep" aria-hidden="true"></li>
+        <li class="progress-steps__item is-done is-current" aria-current="step"><span class="progress-steps__num" aria-hidden="true">✓</span><span class="progress-steps__label">Documentos</span></li>
+      </ol>
+      <a class="topbar__link" href="jobs.html">Ir a vacantes</a>
+    </div>
+  </header>
+
+  <main class="page page--narrow" id="main">
+    <section class="success" aria-labelledby="success-title">
+      <span class="success__icon" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+      </span>
+      <h1 class="page-title" id="success-title">Registrado ✅</h1>
+      <p class="page-subtitle" id="success-message">Tu perfil está completo. Ya puedes postularte a vacantes con un solo clic.</p>
+
+      <div class="card summary">
+        <h2 class="card__title">Resumen de tu registro</h2>
+        <dl class="summary__list" id="summary"></dl>
+      </div>
+
+      <div class="card summary">
+        <h2 class="card__title">¿Qué sigue?</h2>
+        <ol class="next-steps">
+          <li><span><strong>Elige una vacante</strong> que encaje con tu perfil y postúlate.</span></li>
+          <li><span><strong>Contactamos a tus referencias</strong> automáticamente por WhatsApp y correo.</span></li>
+          <li><span><strong>Te respondemos en 24 horas</strong> y puedes seguir cada paso desde “Mis postulaciones”.</span></li>
+        </ol>
+      </div>
+
+      <a class="btn btn--primary" href="jobs.html">
+        <span class="btn__label">Ver vacantes disponibles</span>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/success.js"></script>
+</body>
+</html>

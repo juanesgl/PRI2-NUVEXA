@@ -1,0 +1,127 @@
+/* =========================================================
+   Nuvexa · Design tokens
+   Brand colors sampled from assets/img/logo.png
+   ========================================================= */
+
+:root {
+  /* ---------- Brand palette ---------- */
+  --nv-navy-950: #00213a;
+  --nv-navy-900: #002c4b;
+  --nv-navy-800: #003b63; /* logo background */
+  --nv-navy-700: #0b4d7a;
+  --nv-navy-600: #1d6191;
+
+  --nv-teal-700: #015675;
+  --nv-teal-600: #00818f; /* logo gradient end */
+  --nv-teal-500: #00a3ad;
+  --nv-cyan-400: #00d4c5; /* logo gradient start */
+  --nv-cyan-300: #4fe6da;
+  --nv-cyan-100: #d6f8f5;
+  --nv-cyan-50:  #effcfb;
+
+  /* ---------- Neutrals (cool slate, tinted to the navy) ---------- */
+  --nv-gray-900: #0f1f2e;
+  --nv-gray-800: #1e3142;
+  --nv-gray-700: #3a4b5c;
+  --nv-gray-600: #566778;
+  --nv-gray-500: #5f7081;
+  --nv-gray-400: #9aa8b6;
+  --nv-gray-300: #c9d3dd;
+  --nv-gray-200: #e2e8ef;
+  --nv-gray-100: #eef2f6;
+  --nv-gray-50:  #f6f9fb;
+  --nv-white:    #ffffff;
+
+  /* ---------- Status ---------- */
+  --color-success:      #12a37a;
+  --color-success-text: #0b7a5a;
+  --color-success-bg:   #e3f7f0;
+  --color-warning:      #f2a93b;
+  --color-warning-text: #9a5b00;
+  --color-warning-bg:   #fff4e2;
+  --color-danger:       #e5484d;
+  --color-danger-text:  #c22f35;
+  --color-danger-bg:    #fff5f5;
+  --color-danger-ring:  rgba(229, 72, 77, 0.18);
+  --color-info:         var(--nv-teal-600);
+  --color-info-bg:      var(--nv-cyan-50);
+
+  /* ---------- Semantic ---------- */
+  --color-bg:            #f3f6f9;
+  --color-surface:       var(--nv-white);
+  --color-surface-muted: var(--nv-gray-50);
+  --color-heading:       var(--nv-gray-900);
+  --color-text:          var(--nv-gray-800);
+  --color-text-muted:    var(--nv-gray-500);
+  --color-placeholder:   var(--nv-gray-400);
+  --color-icon:          var(--nv-gray-500);
+  --color-border:        var(--nv-gray-200);
+  --color-border-strong: var(--nv-gray-300);
+  --color-link:          #00727e;
+  --color-primary:       var(--nv-cyan-400);
+  --color-on-primary:    var(--nv-navy-950); /* navy on cyan: AA contrast; white on cyan fails */
+  --color-on-dark:       var(--nv-white);
+  --color-on-dark-muted: rgba(255, 255, 255, 0.76);
+  --color-focus:         var(--nv-teal-600);
+  --color-focus-ring:    rgba(0, 163, 173, 0.2);
+
+  /* ---------- Typography ---------- */
+  --font-sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  clamp(2rem, 1.35rem + 2.2vw, 3rem);
+
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-black:    700;
+
+  --leading-tight:  1.15;
+  --leading-snug:   1.35;
+  --leading-normal: 1.6;
+
+  /* ---------- Spacing (4px scale) ---------- */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* ---------- Radius ---------- */
+  --radius-sm:   6px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-full: 999px;
+
+  /* ---------- Elevation ---------- */
+  --shadow-sm: 0 1px 2px rgba(0, 33, 58, 0.06), 0 1px 3px rgba(0, 33, 58, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 33, 58, 0.08), 0 2px 4px rgba(0, 33, 58, 0.04);
+  --shadow-lg: 0 18px 40px -12px rgba(0, 33, 58, 0.18), 0 4px 12px rgba(0, 33, 58, 0.06);
+  --shadow-xl: 0 32px 64px -16px rgba(0, 33, 58, 0.35);
+
+  /* ---------- Motion ---------- */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in:     cubic-bezier(0.55, 0, 1, 0.45);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 420ms;
+
+  /* ---------- Layers ---------- */
+  --z-base:  1;
+  --z-modal: 900;
+  --z-toast: 1000;
+}

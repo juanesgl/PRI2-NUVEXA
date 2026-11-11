@@ -1,0 +1,68 @@
+# Builds the static mockup into _site/ and publishes it to GitHub Pages.
+# One-time setup: repo Settings → Pages → Source: "GitHub Actions".
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time; a newer push cancels an in-flight run.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check local links
+        # Fails if any page or script references a local file that does not exist.
+        run: |
+          missing=0
+          for page in *.html; do
+            for ref in $(grep -oE '(href|src)="[^"#?]+' "$page" | sed -E 's/^(href|src)="//' | grep -vE '^(https?:|mailto:|tel:|data:)'); do
+              if [ ! -e "$ref" ]; then
+                echo "::error file=$page::missing $ref"
+                missing=1
+              fi
+            done
+          done
+          # Pages linked from JS (location.href / template links)
+          for ref in $(grep -ohE "['\`\"][a-z-]+\.html" js/*.js | tr -d "'\`\"" | sort -u); do
+            if [ ! -e "$ref" ]; then
+              echo "::error::js links to missing $ref"
+              missing=1
+            fi
+          done
+          exit $missing
+
+      - name: Assemble site
+        # Only what the site needs: no CLAUDE.md, README or presentations.
+        run: |
+          mkdir _site
+          cp -r *.html css js assets _site/
+          touch _site/.nojekyll
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

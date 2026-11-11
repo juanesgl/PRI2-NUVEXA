@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nuvexa · Detalle de la vacante</title>
+  <meta name="theme-color" content="#003b63">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body data-page="jobs">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="topbar" id="topbar"></header>
+
+  <main class="page" id="main">
+    <a class="back-link" href="jobs.html">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+      Volver a vacantes
+    </a>
+    <div id="detail"></div>
+  </main>
+
+  <dialog class="modal" id="apply-modal" aria-labelledby="apply-title">
+    <div class="modal__inner" id="apply-step-confirm">
+      <button class="modal__close" type="button" data-modal-close aria-label="Cerrar">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+      <div>
+        <h2 class="modal__title" id="apply-title">Confirma tu postulación</h2>
+        <p class="modal__desc" id="apply-desc"></p>
+      </div>
+      <ul class="apply-summary" id="apply-summary"></ul>
+      <p class="sla-note">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        <span>Al confirmar, contactamos a tus referencias por WhatsApp y correo para verificar tu experiencia.</span>
+      </p>
+      <div class="modal__actions">
+        <button class="btn btn--secondary" type="button" data-modal-close>Cancelar</button>
+        <button class="btn btn--primary" type="button" id="apply-confirm" data-loading-text="Enviando…">
+          <span class="btn__spinner" aria-hidden="true"></span>
+          <span class="btn__label">Confirmar postulación</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="modal__inner apply-done" id="apply-step-done" role="status" hidden>
+      <span class="apply-done__icon" aria-hidden="true">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+      </span>
+      <p class="apply-done__message">Listo, en 24 horas te daremos respuesta dependiendo la respuesta de tus referencias ✅, te notificaremos lo mas pronto posible</p>
+      <div class="modal__actions">
+        <a class="btn btn--secondary" href="jobs.html">Seguir explorando</a>
+        <a class="btn btn--primary" id="track-link" href="tracking.html">Ver seguimiento</a>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="js/app.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/job-details.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nuvexa · Verifica tu identidad</title>
+  <meta name="theme-color" content="#003b63">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/onboarding.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="index.html" aria-label="Nuvexa, inicio">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__name">NUVEXA</span>
+      </a>
+      <ol class="progress-steps" aria-label="Progreso del registro">
+        <li class="progress-steps__item is-done"><span class="progress-steps__num" aria-hidden="true">✓</span><span class="progress-steps__label">Cuenta</span></li>
+        <li class="progress-steps__sep" aria-hidden="true"></li>
+        <li class="progress-steps__item is-done"><span class="progress-steps__num" aria-hidden="true">✓</span><span class="progress-steps__label">Perfil</span></li>
+        <li class="progress-steps__sep" aria-hidden="true"></li>
+        <li class="progress-steps__item is-current" aria-current="step"><span class="progress-steps__num">3</span><span class="progress-steps__label">Documentos</span></li>
+      </ol>
+      <a class="topbar__link" href="index.html">Salir</a>
+    </div>
+  </header>
+
+  <main class="page page--narrow" id="main">
+    <header class="onboarding-head">
+      <h1 class="page-title">Verifica tu identidad</h1>
+      <p class="page-subtitle">Sube tus documentos una sola vez. Los usamos en todas tus postulaciones, sin volver a imprimir ni llevar copias.</p>
+    </header>
+
+    <form id="docs-form" novalidate>
+      <div class="stack">
+        <section class="card" aria-labelledby="sec-files">
+          <h2 class="card__title" id="sec-files">Documentos</h2>
+          <div class="stack">
+            <div>
+              <div class="upload" data-upload>
+                <span class="upload__icon" aria-hidden="true">
+                  <svg class="icon" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><circle cx="8" cy="12" r="2"/><path d="M14 10h4"/><path d="M14 14h4"/></svg>
+                </span>
+                <div>
+                  <p class="upload__title" id="up-id-title">Documento de identidad</p>
+                  <p class="upload__meta" id="up-id-meta">Cédula (ambas caras) o pasaporte. PDF, JPG o PNG de hasta 5&nbsp;MB.</p>
+                </div>
+                <span class="btn btn--secondary btn--sm upload__action" aria-hidden="true">Seleccionar</span>
+                <input type="file" id="up-id" name="id" accept=".pdf,.jpg,.jpeg,.png" aria-labelledby="up-id-title" aria-describedby="up-id-meta up-id-error">
+                <div class="upload__bar" hidden><span></span></div>
+              </div>
+              <p class="field__error" id="up-id-error"></p>
+            </div>
+
+            <div>
+              <div class="upload" data-upload>
+                <span class="upload__icon" aria-hidden="true">
+                  <svg class="icon" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M8 13h8"/><path d="M8 17h5"/></svg>
+                </span>
+                <div>
+                  <p class="upload__title" id="up-cv-title">Hoja de vida</p>
+                  <p class="upload__meta" id="up-cv-meta">PDF o Word de hasta 5&nbsp;MB. Incluye tu experiencia más reciente.</p>
+                </div>
+                <span class="btn btn--secondary btn--sm upload__action" aria-hidden="true">Seleccionar</span>
+                <input type="file" id="up-cv" name="cv" accept=".pdf,.doc,.docx" aria-labelledby="up-cv-title" aria-describedby="up-cv-meta up-cv-error">
+                <div class="upload__bar" hidden><span></span></div>
+              </div>
+              <p class="field__error" id="up-cv-error"></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="sec-face">
+          <header>
+            <h2 class="card__title" id="sec-face">Foto de tu rostro</h2>
+            <p class="card__desc">La comparamos con tu documento para confirmar que eres tú.</p>
+          </header>
+          <div class="face">
+            <div class="face__frame" id="face-frame">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div>
+              <p class="field__label">Para una buena foto:</p>
+              <ul class="face__tips">
+                <li>Ponte de frente, con buena luz.</li>
+                <li>Sin gafas oscuras, gorra ni tapabocas.</li>
+                <li>Que solo aparezcas tú.</li>
+              </ul>
+              <div class="face__actions">
+                <button class="btn btn--dark btn--sm" type="button" id="camera-btn">Abrir cámara</button>
+                <input class="sr-only" type="file" id="face-file" accept="image/*" capture="user" aria-describedby="face-file-error">
+                <label class="btn btn--secondary btn--sm" for="face-file">Subir una foto</label>
+              </div>
+              <p class="field__error" id="face-file-error"></p>
+            </div>
+          </div>
+        </section>
+
+        <div class="field">
+          <label class="check">
+            <input type="checkbox" id="consent" name="consent" aria-describedby="consent-error">
+            <span>Autorizo a Nuvexa a validar mi identidad y a compartir estos documentos solo con las empresas a las que me postule.</span>
+          </label>
+          <p class="field__error" id="consent-error"></p>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <a class="btn btn--secondary" href="register.html">Atrás</a>
+        <button class="btn btn--primary" type="submit" data-loading-text="Verificando…">
+          <span class="btn__spinner" aria-hidden="true"></span>
+          <span class="btn__label">Finalizar registro</span>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+    </form>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/documents.js"></script>
+</body>
+</html>

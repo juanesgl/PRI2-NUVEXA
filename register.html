@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nuvexa · Completa tu perfil</title>
+  <meta name="theme-color" content="#003b63">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/onboarding.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="index.html" aria-label="Nuvexa, inicio">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__name">NUVEXA</span>
+      </a>
+      <ol class="progress-steps" aria-label="Progreso del registro">
+        <li class="progress-steps__item is-done"><span class="progress-steps__num" aria-hidden="true">✓</span><span class="progress-steps__label">Cuenta</span></li>
+        <li class="progress-steps__sep" aria-hidden="true"></li>
+        <li class="progress-steps__item is-current" aria-current="step"><span class="progress-steps__num">2</span><span class="progress-steps__label">Perfil</span></li>
+        <li class="progress-steps__sep" aria-hidden="true"></li>
+        <li class="progress-steps__item"><span class="progress-steps__num">3</span><span class="progress-steps__label">Documentos</span></li>
+      </ol>
+      <a class="topbar__link" href="index.html">Salir</a>
+    </div>
+  </header>
+
+  <main class="page page--narrow" id="main">
+    <header class="onboarding-head">
+      <h1 class="page-title">Cuéntanos sobre ti</h1>
+      <p class="page-subtitle">Con esta información te mostramos vacantes que encajan contigo y contactamos a tus referencias cuando te postules.</p>
+    </header>
+
+    <form id="profile-form" novalidate>
+      <div class="stack">
+        <!-- Contact -->
+        <section class="card" aria-labelledby="sec-contact">
+          <h2 class="card__title" id="sec-contact">Datos de contacto</h2>
+          <div class="stack">
+            <div class="grid-2">
+              <div class="field">
+                <label class="field__label" for="p-name">Nombre completo</label>
+                <input class="input" id="p-name" name="name" autocomplete="name" aria-describedby="p-name-error" required>
+                <p class="field__error" id="p-name-error"></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="p-email">Correo electrónico</label>
+                <input class="input" type="email" id="p-email" name="email" autocomplete="email" inputmode="email" aria-describedby="p-email-error" required>
+                <p class="field__error" id="p-email-error"></p>
+              </div>
+            </div>
+            <div class="grid-2">
+              <div class="field">
+                <label class="field__label" for="p-phone">Celular (WhatsApp)</label>
+                <div class="input-wrap">
+                  <span class="input-wrap__prefix" aria-hidden="true">+57</span>
+                  <input class="input" type="tel" id="p-phone" name="phone" autocomplete="tel-national" inputmode="numeric" placeholder="300 123 4567" aria-describedby="p-phone-error" required>
+                </div>
+                <p class="field__error" id="p-phone-error"></p>
+              </div>
+              <div class="field">
+                <span class="field__label" id="p-city-label">Ciudad o municipio</span>
+                <div class="select" data-select>
+                  <button class="input select__trigger" type="button" id="p-city" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="p-city-label p-city" aria-describedby="p-city-error">
+                    <span class="select__value">Selecciona tu ciudad</span>
+                    <svg class="icon select__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                  </button>
+                  <ul class="select__list" role="listbox" tabindex="-1" aria-labelledby="p-city-label">
+                    <li role="option" data-value="Bogotá">Bogotá</li>
+                    <li role="option" data-value="Soacha">Soacha</li>
+                    <li role="option" data-value="Funza">Funza</li>
+                    <li role="option" data-value="Mosquera">Mosquera</li>
+                    <li role="option" data-value="Madrid">Madrid</li>
+                    <li role="option" data-value="Chía">Chía</li>
+                    <li role="option" data-value="Cajicá">Cajicá</li>
+                    <li role="option" data-value="Cota">Cota</li>
+                    <li role="option" data-value="Zipaquirá">Zipaquirá</li>
+                    <li role="option" data-value="Tocancipá">Tocancipá</li>
+                    <li role="option" data-value="Sibaté">Sibaté</li>
+                  </ul>
+                  <input type="hidden" name="city">
+                </div>
+                <p class="field__error" id="p-city-error"></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Preferences -->
+        <section class="card" aria-labelledby="sec-prefs">
+          <h2 class="card__title" id="sec-prefs">Preferencias de empleo</h2>
+          <div class="stack">
+            <div class="grid-2">
+              <div class="field">
+                <span class="field__label" id="p-category-label">Área que te interesa</span>
+                <div class="select" data-select>
+                  <button class="input select__trigger" type="button" id="p-category" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="p-category-label p-category" aria-describedby="p-category-error">
+                    <span class="select__value">Selecciona un área</span>
+                    <svg class="icon select__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                  </button>
+                  <ul class="select__list" role="listbox" tabindex="-1" aria-labelledby="p-category-label">
+                    <li role="option" data-value="bodega">Bodega y logística</li>
+                    <li role="option" data-value="produccion">Producción</li>
+                    <li role="option" data-value="aseo">Aseo y mantenimiento</li>
+                    <li role="option" data-value="servicio">Servicio al cliente</li>
+                    <li role="option" data-value="construccion">Construcción</li>
+                    <li role="option" data-value="alimentos">Alimentos y bebidas</li>
+                  </ul>
+                  <input type="hidden" name="category">
+                </div>
+                <p class="field__error" id="p-category-error"></p>
+              </div>
+              <div class="field">
+                <span class="field__label" id="p-availability-label">Disponibilidad para empezar</span>
+                <div class="select" data-select>
+                  <button class="input select__trigger" type="button" id="p-availability" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="p-availability-label p-availability" aria-describedby="p-availability-error">
+                    <span class="select__value">¿Cuándo puedes empezar?</span>
+                    <svg class="icon select__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                  </button>
+                  <ul class="select__list" role="listbox" tabindex="-1" aria-labelledby="p-availability-label">
+                    <li role="option" data-value="inmediata">Inmediata</li>
+                    <li role="option" data-value="1-semana">En 1 semana</li>
+                    <li role="option" data-value="15-dias">En 15 días</li>
+                    <li role="option" data-value="1-mes">En 1 mes</li>
+                  </ul>
+                  <input type="hidden" name="availability">
+                </div>
+                <p class="field__error" id="p-availability-error"></p>
+              </div>
+            </div>
+
+            <fieldset class="field fieldset">
+              <legend class="field__label">Turno preferido</legend>
+              <div class="options" id="p-shift" aria-describedby="p-shift-error">
+                <label class="option"><input type="radio" name="shift" value="diurno"><span class="option__title">Diurno</span><span class="option__text">6:00 a. m. – 2:00 p. m.</span></label>
+                <label class="option"><input type="radio" name="shift" value="nocturno"><span class="option__title">Nocturno</span><span class="option__text">10:00 p. m. – 6:00 a. m.</span></label>
+                <label class="option"><input type="radio" name="shift" value="rotativo"><span class="option__title">Rotativo</span><span class="option__text">Cambia cada semana</span></label>
+                <label class="option"><input type="radio" name="shift" value="cualquiera"><span class="option__title">Cualquiera</span><span class="option__text">Más vacantes para ti</span></label>
+              </div>
+              <p class="field__error" id="p-shift-error"></p>
+            </fieldset>
+          </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="card" aria-labelledby="sec-skills">
+          <header>
+            <h2 class="card__title" id="sec-skills">Habilidades</h2>
+            <p class="card__desc">Elige todas las que apliquen. Las empresas las ven primero.</p>
+          </header>
+          <div class="stack">
+            <div class="chips" id="p-skills" role="group" aria-labelledby="sec-skills" aria-describedby="p-skills-error">
+              <button class="chip" type="button" aria-pressed="false">Manejo de inventarios</button>
+              <button class="chip" type="button" aria-pressed="false">Alistamiento de pedidos</button>
+              <button class="chip" type="button" aria-pressed="false">Montacargas</button>
+              <button class="chip" type="button" aria-pressed="false">Empaque</button>
+              <button class="chip" type="button" aria-pressed="false">Control de calidad</button>
+              <button class="chip" type="button" aria-pressed="false">Atención al cliente</button>
+              <button class="chip" type="button" aria-pressed="false">Manejo de caja</button>
+              <button class="chip" type="button" aria-pressed="false">Manipulación de alimentos</button>
+              <button class="chip" type="button" aria-pressed="false">Aseo hospitalario</button>
+              <button class="chip" type="button" aria-pressed="false">Trabajo en alturas</button>
+              <button class="chip" type="button" aria-pressed="false">Mampostería</button>
+              <button class="chip" type="button" aria-pressed="false">Licencia C1</button>
+            </div>
+            <p class="field__error" id="p-skills-error"></p>
+          </div>
+        </section>
+
+        <!-- References -->
+        <section class="card" aria-labelledby="sec-refs">
+          <header>
+            <h2 class="card__title" id="sec-refs">Referencias laborales</h2>
+            <p class="card__desc">Dos personas que hayan trabajado contigo, como un jefe o supervisor anterior.</p>
+          </header>
+          <div class="stack">
+            <p class="callout">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+              <span>Nuvexa las contacta por WhatsApp y correo solo cuando te postulas. Así no tienes que esperar llamadas ni reenviar mensajes.</span>
+            </p>
+
+            <div class="ref" data-ref="1">
+              <p class="ref__head">Referencia 1</p>
+              <div class="grid-2">
+                <div class="field">
+                  <label class="field__label" for="r1-name">Nombre</label>
+                  <input class="input" id="r1-name" name="r1-name" placeholder="Ej. Carlos Pérez" aria-describedby="r1-name-error">
+                  <p class="field__error" id="r1-name-error"></p>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="r1-phone">Celular</label>
+                  <div class="input-wrap">
+                    <span class="input-wrap__prefix" aria-hidden="true">+57</span>
+                    <input class="input" type="tel" id="r1-phone" name="r1-phone" inputmode="numeric" placeholder="310 000 0000" aria-describedby="r1-phone-error">
+                  </div>
+                  <p class="field__error" id="r1-phone-error"></p>
+                </div>
+              </div>
+              <div class="field">
+                <label class="field__label" for="r1-relation">Cargo y empresa</label>
+                <input class="input" id="r1-relation" name="r1-relation" placeholder="Ej. Supervisor de bodega en Almacenes Éxito" aria-describedby="r1-relation-error">
+                <p class="field__error" id="r1-relation-error"></p>
+              </div>
+            </div>
+
+            <div class="ref" data-ref="2">
+              <p class="ref__head">Referencia 2</p>
+              <div class="grid-2">
+                <div class="field">
+                  <label class="field__label" for="r2-name">Nombre</label>
+                  <input class="input" id="r2-name" name="r2-name" placeholder="Ej. Diana Rodríguez" aria-describedby="r2-name-error">
+                  <p class="field__error" id="r2-name-error"></p>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="r2-phone">Celular</label>
+                  <div class="input-wrap">
+                    <span class="input-wrap__prefix" aria-hidden="true">+57</span>
+                    <input class="input" type="tel" id="r2-phone" name="r2-phone" inputmode="numeric" placeholder="320 000 0000" aria-describedby="r2-phone-error">
+                  </div>
+                  <p class="field__error" id="r2-phone-error"></p>
+                </div>
+              </div>
+              <div class="field">
+                <label class="field__label" for="r2-relation">Cargo y empresa</label>
+                <input class="input" id="r2-relation" name="r2-relation" placeholder="Ej. Jefe de turno en Alpina" aria-describedby="r2-relation-error">
+                <p class="field__error" id="r2-relation-error"></p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="form-actions">
+        <a class="btn btn--secondary" href="index.html#registro">Atrás</a>
+        <button class="btn btn--primary" type="submit" data-loading-text="Guardando…">
+          <span class="btn__spinner" aria-hidden="true"></span>
+          <span class="btn__label">Continuar a documentos</span>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+    </form>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>
